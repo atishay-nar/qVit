@@ -1,2 +1,2 @@
 # qml
-quantum machine learning projects
+Vision transformer modified with quantum circuit
