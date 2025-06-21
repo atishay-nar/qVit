@@ -27,7 +27,7 @@ def attend(Q, K, V, batch_size, mask=None):
 # attention class
 class QuantumMultiHeadAttention(nn.Module):
     def __init__(self, num_heads, embed_dim, num_qubits=num_qubits, n_qlayers=1, dev=dev):
-        super(QuantumMultiHeadAttention, self).__init__()
+        super().__init__()
         assert embed_dim % num_heads == 0, "Embedding dimension must be divisible by number of heads"
         assert embed_dim == num_qubits, "Embedding dimension must match number of qubits"
         self.embed_dim = embed_dim
