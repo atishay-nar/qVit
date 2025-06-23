@@ -31,7 +31,6 @@ class QuantumMultiHeadAttention(nn.Module):
         assert embed_dim % num_heads == 0, "Embedding dimension must be divisible by number of heads"
         assert embed_dim == num_qubits, "Embedding dimension must match number of qubits"
         self.embed_dim = embed_dim
-        self.weights = nn.Parameter(torch.randn(num_heads, num_qubits, requires_grad=True))
 
         self.q_layer = qml.QNode(circuit, dev, interface='torch')
         self.weight_shapes = {"weights":(n_qlayers, num_qubits)}
